@@ -93,7 +93,7 @@ export default function ScrollableChart({ series, onLoadMore }: Props) {
 
         setAllData(prev => {
           const merged = mergeByTime(older.points, prev);
-          const added = merged.length - prev.length; // реально добавлено слева
+          const added = merged.length - prev.length;
           setVisibleRange(([s, e]) =>
             clampRange(s + added, e + added, merged.length)
           );

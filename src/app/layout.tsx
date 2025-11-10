@@ -9,19 +9,14 @@ export const metadata: Metadata = {
   description: 'Next 16 • Tailwind • Motion • Server Actions • Context'
 };
 
-export default function RootLayout({
-  children
-}: {
-  children: React.ReactNode;
-}) {
-  const ck = cookies();
-  const initialTicker: Ticker = 'SOL' ? 'SOL' : 'BTC';
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const initialTicker: Ticker = 'SOL';
 
   return (
-    <html lang='en'>
-      <body className='min-h-dvh bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100'>
-        <AppProvider initialTicker={initialTicker}>{children}</AppProvider>
+      <html lang='en'>
+      <body className='...'>
+      <AppProvider initialTicker={initialTicker}>{children}</AppProvider>
       </body>
-    </html>
+      </html>
   );
 }

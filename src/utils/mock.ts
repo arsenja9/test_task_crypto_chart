@@ -14,7 +14,7 @@ export function generateMockSeries(
   const points: PricePoint[] = new Array(count);
   let price = endPrice ?? base;
 
-  const startAt = endAt - (count - 1) * H; // серия заканчивается в endAt
+  const startAt = endAt - (count - 1) * H;
   for (let i = 0; i < count; i++) {
     const t = startAt + i * H;
     const trend = Math.sin(i / 10) * vol * 0.1;
@@ -31,7 +31,7 @@ export function generateOlderData(
 ): PriceSeries {
   if (!series.points.length) return series;
   const first = series.points[0]!;
-  const endAt = first.t - H; // закончить за 1 час до первой
+  const endAt = first.t - H;
   const endPrice = first.y;
   return {
     ticker: series.ticker,
